@@ -4,18 +4,18 @@ from pages.LazypayHomePage import LazypayHomePage
 from utilities import GetOTP, ConfigReader
 
 
-@given("I navigate to Lazypay homepage")
+@given("I navigate to Lazypay website")
 def go_to_lazypay_website(context):
-    print(u'Step: Given I navigate to google website')
+    print(u'Step: Given I navigate to Lazypay website')
     context.lazypay_home_page = LazypayHomePage(context.page)
     context.lazypay_home_page.go_to(ConfigReader.read_config("url", "lazypay_website_url"))
 
 
-@then("I validate that correct website is opened")
-def validate_title(context):
-    title = context.lazypay_home_page
-    print(f"Title: {title}")
-    # assert title == "Apply for Instant Personal Loan and Buy now Pay Later with LazyPay"
+@then(u'I validate that correct website is opened')
+def validate_page(context):
+    expect(context.lazypay_home_page.main_heading).to_be_visible()
+    # expect(context.lazypay_home_page).to_have_screenshot("Config/screenshots/LazypayHomepage.png")
+    # assert_snapshot(page.screenshot())
 
 
 @when("I click on Signup/Login button")

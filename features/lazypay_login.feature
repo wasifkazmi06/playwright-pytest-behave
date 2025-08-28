@@ -2,7 +2,7 @@ Feature: Login
   Login to the Lazypay website dashboard
 
   Scenario Outline: Login to Lazypay website as a user
-    Given I navigate to Lazypay homepage
+    Given I navigate to Lazypay website
     Then I validate that correct website is opened
     When I click on Signup/Login button
     And I enter my mobile number as "<mobile_number>"

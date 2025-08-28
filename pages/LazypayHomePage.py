@@ -7,6 +7,7 @@ class LazypayHomePage(BasePage):
 
     def __init__(self, page: Page):
         super().__init__(page)
+        self.main_heading = page.get_by_role("heading", name="India's Credit Super-App")
         self.login_button = page.get_by_role("button", name="Signup/Login")
         self.mobile_number_input = page.get_by_test_id("mobile-input-field")
         self.proceed_button = page.get_by_role("button", name="Proceed")

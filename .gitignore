@@ -1,9 +1,4 @@
-venv/
-
-testcases/report
-
-trace.zip
-
+venv
 allure-results
-
 .idea
+reports
